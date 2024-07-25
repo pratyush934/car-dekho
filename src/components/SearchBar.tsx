@@ -13,12 +13,18 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => {
 };
 
 const SearchBar = () => {
+  const [manufacturer, setManufacturer] = React.useState<string>("");
   return (
-    <form className="searchbar" onSubmit={console.log("hello")}>
+    <form
+      className="searchbar"
+      onSubmit={() => {
+        return 0;
+      }}
+    >
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={"manufacturer"}
-          setManufacturer={() => {}}
+          setManufacturer={setManufacturer}
         />
         <SearchButton otherClasses="sm:hidden" />
       </div>
