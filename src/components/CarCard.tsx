@@ -11,7 +11,7 @@ interface CarCardProps {
 }
 
 const CarCard = ({ car }: CarCardProps) => {
-  console.log(car);
+  // console.log("------>", car);
 
   const { city_mpg, year, make, model, transmission, drive } = car;
 
@@ -69,7 +69,7 @@ const CarCard = ({ car }: CarCardProps) => {
           handleClick={() => setIsOpen(true)}
         />
       </div>
-      <CardDetails isOpen={isOpen} closeModel={() => setIsOpen(false)} />
+      <CardDetails isOpen={isOpen} closeModel={() => setIsOpen(false)} car={car} />
     </div>
   );
 };
