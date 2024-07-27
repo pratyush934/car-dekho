@@ -19,8 +19,8 @@ export async function fetchtCars(filters: FilterProps) {
   // console.log(filters);
   const { model, manufacturer, year, fuel, limit } = filters;
 
-  const headers = {
-    "x-rapidapi-key": process.env.RAPID_API_KEY,
+  const headers: HeadersInit = {
+    "x-rapidapi-key": process.env.RAPID_API_KEY as string || "",
     "x-rapidapi-host": "cars-by-api-ninjas.p.rapidapi.com",
   };
   const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
