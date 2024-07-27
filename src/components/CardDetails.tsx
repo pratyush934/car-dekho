@@ -53,7 +53,7 @@ const CardDetails = ({ isOpen, closeModel, car }: CardDetailsProps) => {
                 <div className="flex-1 flex flex-col gap-3">
                   <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                     <Image
-                      src={"/hero.png"}
+                      src={"/rolls.png"}
                       alt="car model"
                       fill
                       priority

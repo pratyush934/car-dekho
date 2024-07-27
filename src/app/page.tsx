@@ -1,3 +1,5 @@
+// "use client";
+
 import { Hero } from "@/components";
 import CarCard from "@/components/CarCard";
 import CustomFilter from "@/components/CustomFilter";
@@ -6,20 +8,20 @@ import ShowMore from "@/components/ShowMore";
 import { fuels, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchtCars } from "@/utils";
+import { useState } from "react";
 
 export default async function Home({ searchParams }: HomeProps) {
-  console.log("searchParams-->", searchParams);
+  // console.log("searchParams-->", searchParams);
 
   const allCars = await fetchtCars({
-
     manufacturer: searchParams?.manufacturer || "",
     year: searchParams?.year || 2022,
     fuel: searchParams?.fuel || "",
-    limit: searchParams?.limit || 4,
+    limit: searchParams?.limit || 10,
     model: searchParams?.model || "",
-    
   });
-  console.log("********", allCars);
+  // console.log("********", allCars);
+  // console.log(searchParams?.limit
 
   const isDataEmpty =
     allCars.length === 0 ||

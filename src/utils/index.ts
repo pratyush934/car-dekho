@@ -20,7 +20,7 @@ export async function fetchtCars(filters: FilterProps) {
   const { model, manufacturer, year, fuel, limit } = filters;
 
   const headers = {
-    "x-rapidapi-key": "fd1922d403mshbe8264e792ccb12p1ca144jsnc7119d43fc05",
+    "x-rapidapi-key": process.env.RAPID_API_KEY,
     "x-rapidapi-host": "cars-by-api-ninjas.p.rapidapi.com",
   };
   const url = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
@@ -36,5 +36,5 @@ export const updateSearchParams = (type: string, value: string) => {
 
   const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
 
-  return newPathName
+  return newPathName;
 };
